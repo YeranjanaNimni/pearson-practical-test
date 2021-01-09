@@ -1,0 +1,78 @@
+<h1> Empployees </h1>
+  <div class="background">
+      
+      <div class="grid-one">
+        <p style="font-family: 'Courier New', Courier, monospace; text-align: center;
+        font-weight: bold; font-size: 2em;"> Add a Employee</p> <br> <br>
+          <div class="form">
+              <form #userform="ngForm">
+                
+                  <label>ID number:</label>
+                  <input type="text" id="id" [(ngModel)]="id" name="id"><br><br>
+                  <label>Name:</label>
+                  <input type="text" id="name" [(ngModel)]="name" name="name"><br><br>
+                  <label> DOB </label>
+                  <input type="text" id="dob" [(ngModel)]="dob" name="dob"> <br> <br>
+                  <label>email:</label>
+                  <input type="text" id="email" [(ngModel)]="email" name="email"><br><br>
+                  <label>Contact:</label>
+                  <input type="text" id="contact" [(ngModel)]="contact" name="contact"> <br> <br>
+                  
+                
+                  <button mat-raised-button color="primary" type="submit" (click)="submit(userform.value)" class="submitbtn"> Submit </button>
+                  
+               <!--   <button type="edit" (click)="update(userform.value)" class="submitbtn"> Update </button> -->
+              </form>
+          </div>
+      </div>
+      <div class="grid-two">
+        <p style="font-family: 'Courier New', Courier, monospace; text-align: center;
+        font-weight: bold; font-size: 2em;"> Edit and Delete Employees</p> <br> <br>
+          <div class="table">
+              <table border="2" style="width: 100%;">
+                  <thead>
+                      <th> Employee ID </th>
+                      <th>Name</th>
+                      <th>DOB</th>
+                      <th>Email</th>
+                      <th> Contact </th>
+                      <th> <button mat-raised-button color="accent">Edit</button></th>
+                      <th> <button mat-raised-button color="warn">Delete</button></th>
+                      
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of allEmployees">
+                          <td> {{item.id}}</td>
+                          <td>{{item.name}} </td>
+                          <td>{{item.age}}</td>
+                          <td>{{item.gender}}</td>
+                          <td>{{item.dob}}</td>
+                          <td> <button class="delbtn" (click)="delete(item.id)"> Delete</button></td>  &nbsp;
+                        <!--  <td> <button class="updatebtn" (click)="edit(item.id)"> Edit </button></td> -->
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+      <div class="grid-three">
+        <p style="font-family: 'Courier New', Courier, monospace; text-align: center;
+        font-weight: bold; font-size: 2em;"> Find a Employee</p> <br> <br>
+          <div class="find-user">
+             <p style="font-family: cursive;"> Enter here user ID : </p>
+              <input type="text" id="fid" [(ngModel)]="fid" name="fid"> <br> <br>
+              <button mat-raised-button color="primary" type="submit" class="findBtn" (click)="findAemployee(fid)">Primary</button>
+ 
+  
+              <div class="find-result">
+              <p  class="displayresult"   *ngFor="let user of findAemployeeArray">
+                  User ID ; {{user.id}} <br>
+                  Name : {{user.name}} <br>
+                  Age : {{user.age}} <br>
+                  Gender: {{user.gender}} <br>
+              </p>
+          </div>
+  
+          </div>
+      </div>
+  </div>

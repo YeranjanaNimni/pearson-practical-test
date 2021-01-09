@@ -1,0 +1,25 @@
+.background{
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+}
+
+.table{
+  width: 100%;
+}
+
+.grid-one{
+  background-color: rgb(223, 220, 236);
+  padding: 3em;
+  padding-left: 6em;
+  font-family: cursive;
+}
+
+.grid-two{
+  background-color: rgb(223, 220, 236);
+  padding: 3em;
+  font-family: cursive;
+}
+.grid-three{
+  background-color: rgb(223, 220, 236);
+  padding: 3em;
+}
